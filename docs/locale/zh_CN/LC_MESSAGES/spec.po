@@ -1,0 +1,1576 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023 Ant Group Co., Ltd.
+# This file is distributed under the same license as the Open Secretflow
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Open Secretflow \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-10 15:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../spec.md:1
+msgid "SecretFlow Open Specification"
+msgstr "隐语开放标准"
+
+#: ../../spec.md:2
+msgid "This page is auto-generated with protoc-gen-doc."
+msgstr ""
+
+#: ../../spec.md:4
+msgid "Table of Contents"
+msgstr "目录"
+
+#: ../../spec.md:7
+msgid "[DATA](#DATA)"
+msgstr "[数据](#DATA)"
+
+#: ../../spec.md:11 ../../spec.md:29 ../../spec.md:51 ../../spec.md:63
+#: ../../spec.md:87 ../../spec.md:243 ../../spec.md:442 ../../spec.md:490
+msgid "Messages"
+msgstr ""
+
+#: ../../spec.md:12
+msgid "[DistData](#distdata)"
+msgstr ""
+
+#: ../../spec.md:13
+msgid "[DistData.DataRef](#distdatadataref)"
+msgstr ""
+
+#: ../../spec.md:14
+msgid "[IndividualTable](#individualtable)"
+msgstr ""
+
+#: ../../spec.md:15
+msgid "[StorageConfig](#storageconfig)"
+msgstr ""
+
+#: ../../spec.md:16
+msgid "[StorageConfig.LocalFSConfig](#storageconfiglocalfsconfig)"
+msgstr ""
+
+#: ../../spec.md:17
+msgid "[SystemInfo](#systeminfo)"
+msgstr ""
+
+#: ../../spec.md:18
+msgid "[TableSchema](#tableschema)"
+msgstr ""
+
+#: ../../spec.md:19
+msgid "[VerticalTable](#verticaltable)"
+msgstr ""
+
+#: ../../spec.md:25
+msgid "[COMPONENT](#COMPONENT)"
+msgstr "[组件](#COMPONENT)"
+
+#: ../../spec.md:30
+msgid "[Attribute](#attribute)"
+msgstr ""
+
+#: ../../spec.md:31
+msgid "[AttributeDef](#attributedef)"
+msgstr ""
+
+#: ../../spec.md:32
+msgid "[AttributeDef.AtomicAttrDesc](#attributedefatomicattrdesc)"
+msgstr ""
+
+#: ../../spec.md:33
+msgid "[AttributeDef.UnionAttrGroupDesc](#attributedefunionattrgroupdesc)"
+msgstr ""
+
+#: ../../spec.md:34
+msgid "[CompListDef](#complistdef)"
+msgstr ""
+
+#: ../../spec.md:35
+msgid "[ComponentDef](#componentdef)"
+msgstr ""
+
+#: ../../spec.md:36
+msgid "[IoDef](#iodef)"
+msgstr ""
+
+#: ../../spec.md:37
+msgid "[IoDef.TableAttrDef](#iodeftableattrdef)"
+msgstr ""
+
+#: ../../spec.md:41 ../../spec.md:232 ../../spec.md:409 ../../spec.md:479
+#: ../../spec.md:624
+msgid "Enums"
+msgstr ""
+
+#: ../../spec.md:42
+msgid "[AttrType](#attrtype)"
+msgstr ""
+
+#: ../../spec.md:47
+msgid "[EVALUATION](#EVALUATION)"
+msgstr "[组件执行](#EVALUATION)"
+
+#: ../../spec.md:52
+msgid "[NodeEvalParam](#nodeevalparam)"
+msgstr ""
+
+#: ../../spec.md:53
+msgid "[NodeEvalResult](#nodeevalresult)"
+msgstr ""
+
+#: ../../spec.md:59
+msgid "[REPORT](#REPORT)"
+msgstr "[报告](#REPORT)"
+
+#: ../../spec.md:64
+msgid "[Descriptions](#descriptions)"
+msgstr ""
+
+#: ../../spec.md:65
+msgid "[Descriptions.Item](#descriptionsitem)"
+msgstr ""
+
+#: ../../spec.md:66
+msgid "[Div](#div)"
+msgstr ""
+
+#: ../../spec.md:67
+msgid "[Div.Child](#divchild)"
+msgstr ""
+
+#: ../../spec.md:68
+msgid "[Report](#report)"
+msgstr ""
+
+#: ../../spec.md:69
+msgid "[Tab](#tab)"
+msgstr ""
+
+#: ../../spec.md:70
+msgid "[Table](#table)"
+msgstr ""
+
+#: ../../spec.md:71
+msgid "[Table.HeaderItem](#tableheaderitem)"
+msgstr ""
+
+#: ../../spec.md:72
+msgid "[Table.Row](#tablerow)"
+msgstr ""
+
+#: ../../spec.md:80
+msgid "DATA"
+msgstr "数据"
+
+#: ../../spec.md:82
+msgid ""
+"Proto file: "
+"[secretflow/spec/v1/data.proto](https://github.com/secretflow/spec/tree/main/secretflow/spec/v1/data.proto)"
+msgstr ""
+
+#: ../../spec.md:91
+msgid "DistData"
+msgstr ""
+
+#: ../../spec.md:92
+msgid "A public record for a general distributed data."
+msgstr "用于表示通用分布式数据的公共记录。"
+
+#: ../../spec.md:94
+msgid "The type of this distributed data, should be meaningful to components."
+msgstr "该分布式数据的类型，提供给组件。"
+
+#: ../../spec.md:96
+msgid ""
+"The concrete data format (include public and private parts) is defined by"
+" other protos."
+msgstr "具体的数据格式（包括公共和私有部分）由其他 proto 定义。"
+
+#: ../../spec.md:99
+msgid "Suggested internal types, i.e."
+msgstr "建议的内部类型，即："
+
+#: ../../spec.md:100
+msgid "sf.table.vertical_table      represent a secretflow vertical table"
+msgstr "sf.table.vertical_table 表示secretflow纵向联合表"
+
+#: ../../spec.md:101
+msgid "sf.table.individual_table      represent a secretflow individual table"
+msgstr "sf.table.individual_table 表示secretflow单方表"
+
+#: ../../spec.md
+msgid "Field"
+msgstr ""
+
+#: ../../spec.md
+msgid "Type"
+msgstr ""
+
+#: ../../spec.md
+msgid "Description"
+msgstr ""
+
+#: ../../spec.md
+msgid "name"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ string](#string)"
+msgstr ""
+
+#: ../../spec.md
+msgid "The name of this distributed data."
+msgstr "分布式数据名称"
+
+#: ../../spec.md
+msgid "type"
+msgstr ""
+
+#: ../../spec.md
+msgid "Type."
+msgstr "类型。"
+
+#: ../../spec.md
+msgid "system_info"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ SystemInfo](#systeminfo)"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Describe the system information that used to generate this distributed "
+"data."
+msgstr "描述产生该分布式数据的系统信息。"
+
+#: ../../spec.md
+msgid "meta"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ google.protobuf.Any](#googleprotobufany)"
+msgstr ""
+
+#: ../../spec.md
+msgid "Public information, known to all parties. i.e. VerticalTable."
+msgstr "对各方公开的信息，比如 VerticalTable 。"
+
+#: ../../spec.md
+msgid "data_refs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated DistData.DataRef](#distdatadataref)"
+msgstr ""
+
+#: ../../spec.md
+msgid "Remote data references."
+msgstr "远端数据 references 。"
+
+#: ../../spec.md:116
+msgid "DistData.DataRef"
+msgstr ""
+
+#: ../../spec.md:117
+msgid "A reference to a data that is stored in the remote path."
+msgstr "一个指向存储在远端数据的reference。"
+
+#: ../../spec.md
+msgid "uri"
+msgstr ""
+
+#: ../../spec.md
+msgid "The path information relative to StorageConfig of the party."
+msgstr "相对于StorageConfig的路径信息。"
+
+#: ../../spec.md
+msgid "party"
+msgstr ""
+
+#: ../../spec.md
+msgid "The owner party."
+msgstr "拥有方。"
+
+#: ../../spec.md
+msgid "format"
+msgstr ""
+
+#: ../../spec.md
+msgid "The storage format, i.e. csv."
+msgstr "存储格式，例如csv。"
+
+#: ../../spec.md:130
+msgid "IndividualTable"
+msgstr ""
+
+#: ../../spec.md:131
+msgid "IndividualTable describes a table owned by a single party."
+msgstr "IndividualTable描述了被一方拥有的表单。"
+
+#: ../../spec.md
+msgid "schema"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ TableSchema](#tableschema)"
+msgstr ""
+
+#: ../../spec.md
+msgid "Schema."
+msgstr "表结构。"
+
+#: ../../spec.md
+msgid "line_count"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ int64](#int64)"
+msgstr ""
+
+#: ../../spec.md
+msgid "If -1, the number is unknown."
+msgstr "如果值为-1, 代表列数未知。"
+
+#: ../../spec.md:143
+msgid "StorageConfig"
+msgstr ""
+
+#: ../../spec.md:144
+msgid "A StorageConfig specifies the root for all data for one party."
+msgstr "一个StorageConfig代表了某方所有数据的根。"
+
+#: ../../spec.md:145
+msgid "At this moment, only local_fs is supported"
+msgstr "目前仅支持 local_fs 。"
+
+#: ../../spec.md:146
+msgid "We would support OSS, databases in future."
+msgstr "我们将会支持 OSS，数据库等。"
+
+#: ../../spec.md
+msgid "Supported: local_fs."
+msgstr "支持：local_fs 。"
+
+#: ../../spec.md
+msgid "local_fs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ StorageConfig.LocalFSConfig](#storageconfiglocalfsconfig)"
+msgstr ""
+
+#: ../../spec.md
+msgid "local_fs config."
+msgstr "local_fs 配置。"
+
+#: ../../spec.md:158
+msgid "StorageConfig.LocalFSConfig"
+msgstr ""
+
+#: ../../spec.md:159
+msgid "For local_fs."
+msgstr "仅供 local_fs 。"
+
+#: ../../spec.md
+msgid "wd"
+msgstr ""
+
+#: ../../spec.md
+msgid "Working directory."
+msgstr "工作路径。"
+
+#: ../../spec.md:170
+msgid "SystemInfo"
+msgstr ""
+
+#: ../../spec.md:171
+msgid "Describe the application related to data."
+msgstr "描述了数据相关的应用程序信息。"
+
+#: ../../spec.md
+msgid "app"
+msgstr ""
+
+#: ../../spec.md
+msgid "The application name. Supported: `secretflow`"
+msgstr "应用程序名称，支持\"secretflow\""
+
+#: ../../spec.md
+msgid "app_meta"
+msgstr ""
+
+#: ../../spec.md
+msgid "Meta for application."
+msgstr "应用程序元信息。"
+
+#: ../../spec.md:183
+msgid "TableSchema"
+msgstr ""
+
+#: ../../spec.md:184
+msgid "The schema of a table."
+msgstr "表结构。"
+
+#: ../../spec.md:185
+msgid ""
+"A col must be one of `id | feature | label`. By default, it should be a "
+"feature."
+msgstr "一个col必须属于 `id | feature | label` 。 默认为 feature 。"
+
+#: ../../spec.md:187
+msgid "All names must match the regexp `[A-Za-z0-9.][A-Za-z0-9_>./]*`."
+msgstr "所有名字需要满足正则表达式 `[A-Za-z0-9.][A-Za-z0-9_>./]*` 。"
+
+#: ../../spec.md:188
+msgid "All data type must be one of"
+msgstr "所有数据类型须为"
+
+#: ../../spec.md:189
+msgid "int8"
+msgstr ""
+
+#: ../../spec.md:190
+msgid "int16"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:191
+msgid "int32"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:192
+msgid "int64"
+msgstr ""
+
+#: ../../spec.md:193
+msgid "uint8"
+msgstr ""
+
+#: ../../spec.md:194
+msgid "uint16"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:195
+msgid "uint32"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:196
+msgid "uint64"
+msgstr ""
+
+#: ../../spec.md:197
+msgid "float16"
+msgstr ""
+
+#: ../../spec.md:198
+msgid "float32"
+msgstr ""
+
+#: ../../spec.md:199
+msgid "float64"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:200
+msgid "bool"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:201
+msgid "int"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:202
+msgid "float"
+msgstr ""
+
+#: ../../spec.md ../../spec.md:203
+msgid "str"
+msgstr ""
+
+#: ../../spec.md
+msgid "ids"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated string](#string)"
+msgstr ""
+
+#: ../../spec.md
+msgid "Id column name(s). Optional, can be empty."
+msgstr "Id 列名。 可选项，可以为空。"
+
+#: ../../spec.md
+msgid "features"
+msgstr ""
+
+#: ../../spec.md
+msgid "Feature column name(s)."
+msgstr "特征列名"
+
+#: ../../spec.md
+msgid "labels"
+msgstr ""
+
+#: ../../spec.md
+msgid "Label column name(s). Optional, can be empty."
+msgstr "标签列名。 可选项，可以为空。"
+
+#: ../../spec.md
+msgid "id_types"
+msgstr ""
+
+#: ../../spec.md
+msgid "Id column data type(s). Len(id) should match len(id_types)."
+msgstr "Id 列数据类型。 长度需要和 id_types 一致。"
+
+#: ../../spec.md
+msgid "feature_types"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Feature column data type(s). Len(features) should match "
+"len(feature_types)."
+msgstr "特征列数据类型。 长度需要和 feature_types 一致。"
+
+#: ../../spec.md
+msgid "label_types"
+msgstr ""
+
+#: ../../spec.md
+msgid "Label column data type(s). Len(labels) should match len(label_types)."
+msgstr "标签列数据类型。 长度需要和 label_types 一致。"
+
+#: ../../spec.md:219
+msgid "VerticalTable"
+msgstr ""
+
+#: ../../spec.md:220
+msgid ""
+"VerticalTable describes a virtual vertical partitioning table from "
+"multiple parties."
+msgstr "VerticalTable 描述了一个属于多方的垂直切分表。"
+
+#: ../../spec.md
+msgid "schemas"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated TableSchema](#tableschema)"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"The vertical partitioned slices' schema. Must match data_refs in the "
+"parent DistData message."
+msgstr "垂直切分各分片的表结构。 需要和 DistData 中的 data_refs 配合使用。"
+
+#: ../../spec.md:236
+msgid "COMPONENT"
+msgstr "组件"
+
+#: ../../spec.md:238
+msgid ""
+"Proto file: "
+"[secretflow/spec/v1/component.proto](https://github.com/secretflow/spec/tree/main/secretflow/spec/v1/component.proto)"
+msgstr ""
+
+#: ../../spec.md:247
+msgid "Attribute"
+msgstr ""
+
+#: ../../spec.md:248
+msgid "The value of an attribute"
+msgstr "属性的值"
+
+#: ../../spec.md
+msgid "f"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ float](#float)"
+msgstr ""
+
+#: ../../spec.md
+msgid "FLOAT"
+msgstr ""
+
+#: ../../spec.md
+msgid "i64"
+msgstr ""
+
+#: ../../spec.md
+msgid "INT NOTE(junfeng): \"is\" is preserved by Python. Replaced with \"i64\"."
+msgstr ""
+
+#: ../../spec.md
+msgid "s"
+msgstr ""
+
+#: ../../spec.md
+msgid "STRING"
+msgstr ""
+
+#: ../../spec.md
+msgid "b"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ bool](#bool)"
+msgstr ""
+
+#: ../../spec.md
+msgid "BOOL"
+msgstr ""
+
+#: ../../spec.md
+msgid "fs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated float](#float)"
+msgstr ""
+
+#: ../../spec.md
+msgid "FLOATS"
+msgstr ""
+
+#: ../../spec.md
+msgid "i64s"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated int64](#int64)"
+msgstr ""
+
+#: ../../spec.md
+msgid "INTS"
+msgstr ""
+
+#: ../../spec.md
+msgid "ss"
+msgstr ""
+
+#: ../../spec.md
+msgid "STRINGS"
+msgstr ""
+
+#: ../../spec.md
+msgid "bs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated bool](#bool)"
+msgstr ""
+
+#: ../../spec.md
+msgid "BOOLS"
+msgstr ""
+
+#: ../../spec.md
+msgid "is_na"
+msgstr ""
+
+#: ../../spec.md
+msgid "Indicates the value is missing explicitly."
+msgstr "表示是否该值被显式置为空。"
+
+#: ../../spec.md:267
+msgid "AttributeDef"
+msgstr ""
+
+#: ../../spec.md:268
+msgid "Describe an attribute."
+msgstr "描述一个属性。"
+
+#: ../../spec.md
+msgid "prefixes"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Indicates the ancestors of a node, e.g. `[name_a, name_b, name_c]` means "
+"the path prefixes of current Attribute is `name_a/name_b/name_c/`. Only "
+"`^[a-zA-Z0-9_.-]*$` is allowed. `input` and `output` are reserved."
+msgstr ""
+"表明一个节点的所有祖先。例如 `[name_a, name_b, name_c]` 说明路径的前缀为 "
+"`name_a/name_b/name_c/` 只有 `^[a-zA-Z0-9_.-]*$` 被允许。`input` 和 `output` "
+"为保留词。"
+
+#: ../../spec.md
+msgid ""
+"Must be unique in the same level just like Linux file systems. Only "
+"`^[a-zA-Z0-9_.-]*$` is allowed. `input` and `output` are reserved."
+msgstr "在同一层次必须唯一，和linux文件系统一致。只有 `^[a-zA-Z0-9_.-]*$` 被允许。`input` 和 `output` 为保留词。"
+
+#: ../../spec.md
+msgid "desc"
+msgstr ""
+
+#: ../../spec.md
+msgid "none"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ AttrType](#attrtype)"
+msgstr ""
+
+#: ../../spec.md
+msgid "atomic"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ AttributeDef.AtomicAttrDesc](#attributedefatomicattrdesc)"
+msgstr ""
+
+#: ../../spec.md
+msgid "union"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ AttributeDef.UnionAttrGroupDesc](#attributedefunionattrgroupdesc)"
+msgstr ""
+
+#: ../../spec.md:284
+msgid "AttributeDef.AtomicAttrDesc"
+msgstr ""
+
+#: ../../spec.md:285
+msgid ""
+"Extras for an atomic attribute. Including: `AT_FLOAT | AT_INT | AT_STRING"
+" | AT_BOOL | AT_FLOATS | AT_INTS | AT_STRINGS | AT_BOOLS`."
+msgstr ""
+"atomic 属性额外配置。包括。`AT_FLOAT | AT_INT | AT_STRING | AT_BOOL | AT_FLOATS | "
+"AT_INTS | AT_STRINGS | AT_BOOLS` 。"
+
+#: ../../spec.md
+msgid "list_min_length_inclusive"
+msgstr ""
+
+#: ../../spec.md
+msgid "Only valid when type is `AT_FLOATS | AT_INTS | AT_STRINGS | AT_BOOLS`."
+msgstr "仅当类型为 `AT_FLOATS | AT_INTS | AT_STRINGS | AT_BOOLS` 时有效。"
+
+#: ../../spec.md
+msgid "list_max_length_inclusive"
+msgstr ""
+
+#: ../../spec.md
+msgid "is_optional"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"If True, when Atmoic Attr is not provided or is_na, default_value would "
+"be used. Else, Atmoic Attr must be provided."
+msgstr "如果为真，当值没有给出或者 is_na 为真是， default_value 将会被使用。否则，值必须给出。"
+
+#: ../../spec.md
+msgid "default_value"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ Attribute](#attribute)"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"A reasonable default for this attribute if the user does not supply a "
+"value."
+msgstr "当用户没有给出值时的合理默认值。"
+
+#: ../../spec.md
+msgid "allowed_values"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Only valid when type is `AT_FLOAT | AT_INT | AT_STRING | AT_FLOATS | "
+"AT_INTS | AT_STRINGS`. Please use list fields of AtomicParameter, i.e. "
+"`ss`, `i64s`, `fs`. If the attribute is a list, allowed_values is applied"
+" to each element."
+msgstr ""
+"仅当类型为 `AT_FLOAT | AT_INT | AT_STRING | AT_FLOATS | AT_INTS | AT_STRINGS` "
+"时有效。请使用 AtomicParameter 中表示列表的 field ， 即 `ss`, `i64s`, `fs` "
+"。当属性是一个列表时，allowed_values 将会限制列表的每一个成员。"
+
+#: ../../spec.md
+msgid "lower_bound_enabled"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Only valid when type is `AT_FLOAT | AT_INT | AT_FLOATS | AT_INTS `. If "
+"the attribute is a list, lower_bound is applied to each element."
+msgstr ""
+"仅当类型为 `AT_FLOAT | AT_INT | AT_FLOATS | AT_INTS` 时有效。当属性是一个列表时，lower_bound"
+" 将会限制列表的每一个成员。"
+
+#: ../../spec.md
+msgid "lower_bound"
+msgstr ""
+
+#: ../../spec.md
+msgid "lower_bound_inclusive"
+msgstr ""
+
+#: ../../spec.md
+msgid "upper_bound_enabled"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Only valid when type is `AT_FLOAT | AT_INT | AT_FLOATS | AT_INTS `. If "
+"the attribute is a list, upper_bound is applied to each element."
+msgstr ""
+"仅当类型为 `AT_FLOAT | AT_INT | AT_FLOATS | AT_INTS` 时有效。当属性是一个列表时，upper_bound"
+" 将会限制列表的每一个成员。"
+
+#: ../../spec.md
+msgid "upper_bound"
+msgstr ""
+
+#: ../../spec.md
+msgid "upper_bound_inclusive"
+msgstr ""
+
+#: ../../spec.md:308
+msgid "AttributeDef.UnionAttrGroupDesc"
+msgstr ""
+
+#: ../../spec.md:309
+msgid "Extras for a union attribute group."
+msgstr "Union 属性组额外配置。"
+
+#: ../../spec.md
+msgid "default_selection"
+msgstr ""
+
+#: ../../spec.md
+msgid "The default selected child."
+msgstr "默认选择的子节点。"
+
+#: ../../spec.md:320
+msgid "CompListDef"
+msgstr ""
+
+#: ../../spec.md:321
+msgid "A list of components"
+msgstr "组件列表"
+
+#: ../../spec.md
+msgid "version"
+msgstr ""
+
+#: ../../spec.md
+msgid "comps"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated ComponentDef](#componentdef)"
+msgstr ""
+
+#: ../../spec.md:335
+msgid "ComponentDef"
+msgstr ""
+
+#: ../../spec.md:336
+msgid "The definition of a comp."
+msgstr "组件定义。"
+
+#: ../../spec.md
+msgid "domain"
+msgstr ""
+
+#: ../../spec.md
+msgid "Namespace of the comp."
+msgstr "组件命名空间。"
+
+#: ../../spec.md
+msgid "Should be unique among all comps of the same domain."
+msgstr "在相同命名空间中需要唯一。"
+
+#: ../../spec.md
+msgid "Version of the comp."
+msgstr "组件版本。"
+
+#: ../../spec.md
+msgid "attrs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated AttributeDef](#attributedef)"
+msgstr ""
+
+#: ../../spec.md
+msgid "inputs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated IoDef](#iodef)"
+msgstr ""
+
+#: ../../spec.md
+msgid "outputs"
+msgstr ""
+
+#: ../../spec.md:353
+msgid "IoDef"
+msgstr ""
+
+#: ../../spec.md:354
+msgid "Define an input/output for component."
+msgstr "定义了组件的输入输出。"
+
+#: ../../spec.md
+msgid "should be unique among all IOs of the component."
+msgstr "需要在组件所有IO中唯一。"
+
+#: ../../spec.md
+msgid "types"
+msgstr ""
+
+#: ../../spec.md
+msgid "Must be one of DistData.type in data.proto"
+msgstr "必须属于 data.proto 中 DistData.type 。"
+
+#: ../../spec.md
+msgid "[repeated IoDef.TableAttrDef](#iodeftableattrdef)"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Only valid for tables. The attribute path for a TableAttrDef is "
+"`{input|output}/{IoDef name}/{TableAttrDef name}`."
+msgstr ""
+"仅适用于表。一个 TableAttrDef 的属性路径为 `{input|output}/{IoDef name}/{TableAttrDef "
+"name}` 。"
+
+#: ../../spec.md:368
+msgid "IoDef.TableAttrDef"
+msgstr ""
+
+#: ../../spec.md:369
+msgid "An extra attribute for a table."
+msgstr "一个表单的额外属性。"
+
+#: ../../spec.md:371
+msgid "If provided in a IoDef, e.g."
+msgstr "如果在一个 IoDef 中提供， 例如"
+
+#: ../../spec.md:389
+msgid ""
+"means after a user provide a table as IO, they should also specify cols "
+"as \"feature\":"
+msgstr "以为着一个用户提供了一个表作为 IO, 他仍然需要制定一些列作为 \"feature\": "
+
+#: ../../spec.md:391
+msgid "col_min_cnt_inclusive is 1: At least 1 col to be selected."
+msgstr "col_min_cnt_inclusive 为1: 至少选择一列。"
+
+#: ../../spec.md:392
+msgid ""
+"col_max_cnt_inclusive is 3: At most 3 cols to be selected. And "
+"afterwards, user have to fill an int attribute called bucket_size for "
+"each selected cols."
+msgstr "col_max_cnt_inclusive 为3: 至多选择3列。并且每选择一列之后， 用户还需要设置一个int属性bucket_size 。"
+
+#: ../../spec.md
+msgid "Must be unique among all attributes for the table."
+msgstr "在表的所有属性中需要唯一。"
+
+#: ../../spec.md
+msgid ""
+"Accepted col data types. Please check comments of TableSchema in "
+"data.proto."
+msgstr "接受的列数据类型。 请查看 data.proto 中 TableSchema 的 comments。"
+
+#: ../../spec.md
+msgid "col_min_cnt_inclusive"
+msgstr ""
+
+#: ../../spec.md
+msgid "inclusive"
+msgstr ""
+
+#: ../../spec.md
+msgid "col_max_cnt_inclusive"
+msgstr ""
+
+#: ../../spec.md
+msgid "extra_attrs"
+msgstr ""
+
+#: ../../spec.md
+msgid "extra attribute for specified col."
+msgstr "制定列的额外属性。"
+
+#: ../../spec.md:413
+msgid "AttrType"
+msgstr ""
+
+#: ../../spec.md:414
+msgid "Supported attribute types."
+msgstr "支持的属性类型。"
+
+#: ../../spec.md
+msgid "Name"
+msgstr ""
+
+#: ../../spec.md
+msgid "Number"
+msgstr ""
+
+#: ../../spec.md
+msgid "ATTR_TYPE_UNSPECIFIED"
+msgstr ""
+
+#: ../../spec.md
+msgid "0"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_FLOAT"
+msgstr ""
+
+#: ../../spec.md
+msgid "1"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_INT"
+msgstr ""
+
+#: ../../spec.md
+msgid "2"
+msgstr ""
+
+#: ../../spec.md
+msgid "INT"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_STRING"
+msgstr ""
+
+#: ../../spec.md
+msgid "3"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_BOOL"
+msgstr ""
+
+#: ../../spec.md
+msgid "4"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_FLOATS"
+msgstr ""
+
+#: ../../spec.md
+msgid "5"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_INTS"
+msgstr ""
+
+#: ../../spec.md
+msgid "6"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_STRINGS"
+msgstr ""
+
+#: ../../spec.md
+msgid "7"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_BOOLS"
+msgstr ""
+
+#: ../../spec.md
+msgid "8"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_STRUCT_GROUP"
+msgstr ""
+
+#: ../../spec.md
+msgid "9"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_UNION_GROUP"
+msgstr ""
+
+#: ../../spec.md
+msgid "10"
+msgstr ""
+
+#: ../../spec.md
+msgid "AT_SF_TABLE_COL"
+msgstr ""
+
+#: ../../spec.md
+msgid "11"
+msgstr ""
+
+#: ../../spec.md:435
+msgid "EVALUATION"
+msgstr "组件执行"
+
+#: ../../spec.md:437
+msgid ""
+"Proto file: "
+"[secretflow/spec/v1/evaluation.proto](https://github.com/secretflow/spec/tree/main/secretflow/spec/v1/evaluation.proto)"
+msgstr ""
+
+#: ../../spec.md:446
+msgid "NodeEvalParam"
+msgstr ""
+
+#: ../../spec.md:447
+msgid "Evaluate a node."
+msgstr ""
+
+#: ../../spec.md:448
+msgid ""
+"CompListDef + StorageConfig + NodeEvalParam + other extra configs -> "
+"NodeEvalResult"
+msgstr "CompListDef + StorageConfig + NodeEvalParam + 其他额外配置 -> NodeEvalResult"
+
+#: ../../spec.md:451
+msgid "NodeEvalParam contains all the information to evaluate a component."
+msgstr "NodeEvalParam 包含了所有用于执行组件的信息。"
+
+#: ../../spec.md
+msgid "Domain of the component."
+msgstr "组件命名空间"
+
+#: ../../spec.md
+msgid "Name of the component."
+msgstr "组件名称。"
+
+#: ../../spec.md
+msgid "Version of the component."
+msgstr "组件版本。"
+
+#: ../../spec.md
+msgid "attr_paths"
+msgstr ""
+
+#: ../../spec.md
+msgid "The path of attributes. The attribute path for a TableAttrDef is `(input"
+msgstr "属性路径。 一个TableAttrDef的属性路径为 `(input"
+
+#: ../../spec.md
+msgid "[repeated Attribute](#attribute)"
+msgstr ""
+
+#: ../../spec.md
+msgid "The value of the attribute. Must match attr_paths."
+msgstr "属性的值，需要和 attr_paths 顺序一致。"
+
+#: ../../spec.md
+msgid "[repeated DistData](#distdata)"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"The input data, the order of inputs must match inputs in ComponentDef. "
+"NOTE: Names of DistData doesn't need to match those of inputs in "
+"ComponentDef definition."
+msgstr "输入数据，输入的顺序和组件定义中输入顺序一致。注意：DistData 的名称和 ComponentDef 中的 inputs 的名称无关。"
+
+#: ../../spec.md
+msgid "output_uris"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"The output data uris, the order of output_uris must match outputs in "
+"ComponentDef."
+msgstr "输出数据，输出的顺序和组件定义中输出顺序一致。"
+
+#: ../../spec.md:468
+msgid "NodeEvalResult"
+msgstr ""
+
+#: ../../spec.md:469
+msgid "NodeEvalResult contains outputs of a component evaluation."
+msgstr "NodeEvalResult包含了组件执行之后的输出。"
+
+#: ../../spec.md
+msgid "Output data."
+msgstr "输出数据。"
+
+#: ../../spec.md:483
+msgid "REPORT"
+msgstr "报告"
+
+#: ../../spec.md:485
+msgid ""
+"Proto file: "
+"[secretflow/spec/v1/report.proto](https://github.com/secretflow/spec/tree/main/secretflow/spec/v1/report.proto)"
+msgstr ""
+
+#: ../../spec.md:494
+msgid "Descriptions"
+msgstr ""
+
+#: ../../spec.md:495
+msgid "Displays multiple read-only fields in groups."
+msgstr "以组的形式显示多个值。"
+
+#: ../../spec.md
+msgid "Name of the Descriptions."
+msgstr "Descriptions的名称。"
+
+#: ../../spec.md
+msgid "items"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated Descriptions.Item](#descriptionsitem)"
+msgstr ""
+
+#: ../../spec.md:508
+msgid "Descriptions.Item"
+msgstr ""
+
+#: ../../spec.md
+msgid "Name of the field."
+msgstr "field 的名称。"
+
+#: ../../spec.md
+msgid "Must be one of bool/int/float/str"
+msgstr "必须是 bool/int/float/str 。"
+
+#: ../../spec.md
+msgid "value"
+msgstr ""
+
+#: ../../spec.md:523
+msgid "Div"
+msgstr ""
+
+#: ../../spec.md:524
+msgid "A division or a section of a page."
+msgstr "一个页面的一部分。"
+
+#: ../../spec.md
+msgid "Name of the Div."
+msgstr "Div的名称。"
+
+#: ../../spec.md
+msgid "children"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated Div.Child](#divchild)"
+msgstr ""
+
+#: ../../spec.md:537
+msgid "Div.Child"
+msgstr ""
+
+#: ../../spec.md
+msgid "Supported: descriptions, table, div."
+msgstr "支持：descriptions, table, div 。"
+
+#: ../../spec.md
+msgid "descriptions"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ Descriptions](#descriptions)"
+msgstr ""
+
+#: ../../spec.md
+msgid "table"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ Table](#table)"
+msgstr ""
+
+#: ../../spec.md
+msgid "div"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ Div](#div)"
+msgstr ""
+
+#: ../../spec.md:552
+msgid "Report"
+msgstr ""
+
+#: ../../spec.md
+msgid "Name of the Report."
+msgstr "Report名称。"
+
+#: ../../spec.md
+msgid "tabs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated Tab](#tab)"
+msgstr ""
+
+#: ../../spec.md
+msgid "err_code"
+msgstr ""
+
+#: ../../spec.md
+msgid "[ int32](#int32)"
+msgstr ""
+
+#: ../../spec.md
+msgid "err_detail"
+msgstr ""
+
+#: ../../spec.md
+msgid "Structed error detail (JSON encoded message)."
+msgstr "结构话的报错细节, 推荐使用JSON编码。"
+
+#: ../../spec.md:568
+msgid "Tab"
+msgstr ""
+
+#: ../../spec.md:569
+msgid "A page of a report."
+msgstr "一页report。"
+
+#: ../../spec.md
+msgid "Name of the Tab."
+msgstr "Tab 名称。"
+
+#: ../../spec.md
+msgid "divs"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated Div](#div)"
+msgstr ""
+
+#: ../../spec.md:582
+msgid "Table"
+msgstr ""
+
+#: ../../spec.md:583
+msgid "Displays rows of data."
+msgstr "显示一行数据。"
+
+#: ../../spec.md
+msgid "Name of the Table."
+msgstr "Table 的名称。"
+
+#: ../../spec.md
+msgid "headers"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated Table.HeaderItem](#tableheaderitem)"
+msgstr ""
+
+#: ../../spec.md
+msgid "rows"
+msgstr ""
+
+#: ../../spec.md
+msgid "[repeated Table.Row](#tablerow)"
+msgstr ""
+
+#: ../../spec.md:597
+msgid "Table.HeaderItem"
+msgstr ""
+
+#: ../../spec.md:611
+msgid "Table.Row"
+msgstr ""
+
+#: ../../spec.md:628
+msgid "Scalar Value Types"
+msgstr "标量值类型"
+
+#: ../../spec.md
+msgid "Notes"
+msgstr ""
+
+#: ../../spec.md
+msgid "C++ Type"
+msgstr ""
+
+#: ../../spec.md
+msgid "Java Type"
+msgstr ""
+
+#: ../../spec.md
+msgid "Python Type"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"double\" /></div><a name=\"double\" /> double"
+msgstr ""
+
+#: ../../spec.md
+msgid "double"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"float\" /></div><a name=\"float\" /> float"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"int32\" /></div><a name=\"int32\" /> int32"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Uses variable-length encoding. Inefficient for encoding negative numbers "
+"– if your field is likely to have negative values, use sint32 instead."
+msgstr "使用可变长度编码。对于编码负数效率较低 - 如果你的字段可能有负值，请使用sint32代替。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"int64\" /></div><a name=\"int64\" /> int64"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Uses variable-length encoding. Inefficient for encoding negative numbers "
+"– if your field is likely to have negative values, use sint64 instead."
+msgstr "使用可变长度编码。对于编码负数效率较低 - 如果你的字段可能有负值，请使用sint64代替。"
+
+#: ../../spec.md
+msgid "long"
+msgstr ""
+
+#: ../../spec.md
+msgid "int/long"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"uint32\" /></div><a name=\"uint32\" /> uint32"
+msgstr ""
+
+#: ../../spec.md
+msgid "Uses variable-length encoding."
+msgstr "使用可变长度编码。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"uint64\" /></div><a name=\"uint64\" /> uint64"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"sint32\" /></div><a name=\"sint32\" /> sint32"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Uses variable-length encoding. Signed int value. These more efficiently "
+"encode negative numbers than regular int32s."
+msgstr "使用可变长度编码。带符号整型值。相比普通的int32，这种编码方式更高效地编码负数。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"sint64\" /></div><a name=\"sint64\" /> sint64"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Uses variable-length encoding. Signed int value. These more efficiently "
+"encode negative numbers than regular int64s."
+msgstr "使用可变长度编码。带符号整型值。相比普通的int64，这种编码方式更高效地编码负数。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"fixed32\" /></div><a name=\"fixed32\" /> fixed32"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Always four bytes. More efficient than uint32 if values are often greater"
+" than 2^28."
+msgstr "始终为四个字节。如果值通常大于2^28，则比uint32更高效。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"fixed64\" /></div><a name=\"fixed64\" /> fixed64"
+msgstr ""
+
+#: ../../spec.md
+msgid ""
+"Always eight bytes. More efficient than uint64 if values are often "
+"greater than 2^56."
+msgstr "始终为八个字节。如果值通常大于2^56，则比uint64更高效。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"sfixed32\" /></div><a name=\"sfixed32\" /> sfixed32"
+msgstr ""
+
+#: ../../spec.md
+msgid "Always four bytes."
+msgstr "始终为四个字节。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"sfixed64\" /></div><a name=\"sfixed64\" /> sfixed64"
+msgstr ""
+
+#: ../../spec.md
+msgid "Always eight bytes."
+msgstr "始终为八个字节。"
+
+#: ../../spec.md
+msgid "<div><h4 id=\"bool\" /></div><a name=\"bool\" /> bool"
+msgstr ""
+
+#: ../../spec.md
+msgid "boolean"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"string\" /></div><a name=\"string\" /> string"
+msgstr ""
+
+#: ../../spec.md
+msgid "A string must always contain UTF-8 encoded or 7-bit ASCII text."
+msgstr "字符串必须始终包含UTF-8编码或7位ASCII文本。"
+
+#: ../../spec.md
+msgid "string"
+msgstr ""
+
+#: ../../spec.md
+msgid "String"
+msgstr ""
+
+#: ../../spec.md
+msgid "str/unicode"
+msgstr ""
+
+#: ../../spec.md
+msgid "<div><h4 id=\"bytes\" /></div><a name=\"bytes\" /> bytes"
+msgstr ""
+
+#: ../../spec.md
+msgid "May contain any arbitrary sequence of bytes."
+msgstr "可以包含任意字节序列。"
+
+#: ../../spec.md
+msgid "ByteString"
+msgstr ""

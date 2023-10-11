@@ -1,0 +1,10 @@
+# byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# bazel
+bazel-*
+
+# macos
+.DS_Store

@@ -1,0 +1,87 @@
+# SecretFlow Open Specification
+> This page is auto-generated with protoc-gen-doc.
+
+## Table of Contents
+{{range .Files}}
+
+{{$file_name := .Name}} ### [{{.Name | replace "secretflow/spec/v1/" "" | replace ".proto" "" | upper}}](#{{.Name | replace "secretflow/spec/v1/" "" | replace ".proto" "" | upper}})
+
+{{if .HasServices}}
+  - Services
+    {{range .Services}}  - [{{.Name}}](#{{.FullName | lower | replace "." ""}})
+    {{end}}
+  {{end}}
+  {{if .HasMessages}}
+  - Messages
+    {{range .Messages}}  - [{{.LongName}}](#{{.LongName | lower | replace "." ""}})
+    {{end}}
+  {{end}}
+  {{if .HasEnums}}
+  - Enums
+    {{range .Enums}}  - [{{.LongName}}](#{{.LongName | lower | replace "." ""}})
+    {{end}}
+{{end}}
+{{end}}
+
+{{range .Files}}
+({{.Name | replace "secretflow/spec/v1/" "" | replace ".proto" "" | upper}})=
+{{$file_name := .Name}} ## {{.Name | replace "secretflow/spec/v1/" "" | replace ".proto" "" | upper}}
+
+Proto file: [{{.Name }}](https://github.com/secretflow/spec/tree/main/{{.Name }})
+
+
+{{range .Services -}}
+({{.LongName | lower | replace "." ""}})=
+### {{.Name}} {#{{.FullName | lower | replace "." ""}}}
+{{.Description}}
+
+{{range .Methods -}}
+({{.LongName | lower | replace "." ""}})=
+#### {{.Name}}
+
+> **rpc** {{.Name}}([{{.RequestLongType}}](#{{.RequestLongType | lower | replace "." ""}}))
+    [{{.ResponseLongType}}](#{{.ResponseLongType | lower | replace "." ""}})
+
+{{ .Description}}
+{{end}} <!-- end methods -->
+{{end}} <!-- end services -->
+
+### Messages
+{{range .Messages}}
+
+({{.LongName | lower | replace "." ""}})=
+#### {{.LongName}}
+{{.Description}}
+
+{{if .HasFields}}
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+{{range .Fields -}}
+	| {{if .IsOneof}}[**oneof**](https://developers.google.com/protocol-buffers/docs/proto3#oneof) {{.OneofDecl}}.{{end}}{{.Name}} | [{{if .IsMap}}map {{else}}{{.Label}} {{end}}{{.LongType}}](#{{.LongType | lower | replace "." ""}}) | {{if .Description}}{{nobr .Description}}{{if .DefaultValue}} Default: {{.DefaultValue}}{{end}}{{else}}none{{end}} |
+{{end}} <!-- end Fields -->
+{{end}} <!-- end HasFields -->
+{{end}} <!-- end messages -->
+
+### Enums
+{{range .Enums}}
+
+({{.LongName | lower | replace "." ""}})=
+#### {{.LongName}}
+{{.Description}}
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+{{range .Values -}}
+	| {{.Name}} | {{.Number}} | {{if .Description}}{{nobr .Description}}{{else}}none{{end}} |
+{{end}}
+
+{{end}} <!-- end Enums -->
+{{end}} <!-- end Files -->
+
+## Scalar Value Types
+
+| Type | Notes | C++ Type | Java Type | Python Type |
+| ---- | ----- | -------- | --------- | ----------- |
+{{range .Scalars -}}
+  | <div><h4 id="{{.ProtoType | lower | replace "." ""}}" /></div><a name="{{.ProtoType}}" /> {{.ProtoType}} | {{.Notes}} | {{.CppType}} | {{.JavaType}} | {{.PythonType}} |
+{{end}}
