@@ -276,6 +276,7 @@ Describe an attribute.
 | type | [ AttrType](#attrtype) | none |
 | atomic | [ AttributeDef.AtomicAttrDesc](#attributedefatomicattrdesc) | none |
 | union | [ AttributeDef.UnionAttrGroupDesc](#attributedefunionattrgroupdesc) | none |
+| custom_protobuf_cls | [ string](#string) | Extras for custom protobuf attribute |
  <!-- end Fields -->
  <!-- end HasFields -->
 
@@ -427,6 +428,7 @@ Supported attribute types.
 | AT_STRUCT_GROUP | 9 | none |
 | AT_UNION_GROUP | 10 | none |
 | AT_SF_TABLE_COL | 11 | none |
+| AT_CUSTOM_PROTOBUF | 12 | none |
 
 
  <!-- end Enums -->
@@ -456,7 +458,7 @@ NodeEvalParam contains all the information to evaluate a component.
 | domain | [ string](#string) | Domain of the component. |
 | name | [ string](#string) | Name of the component. |
 | version | [ string](#string) | Version of the component. |
-| attr_paths | [repeated string](#string) | The path of attributes. The attribute path for a TableAttrDef is `(input|output)/(IoDef name)/(TableAttrDef name)(/(column name)(/(extra attributes))?)?`. |
+| attr_paths | [repeated string](#string) | The path of attributes. The attribute path for a TableAttrDef is `(input\|output)/(IoDef name)/(TableAttrDef name)(/(column name)(/(extra attributes))?)?`. |
 | attrs | [repeated Attribute](#attribute) | The value of the attribute. Must match attr_paths. |
 | inputs | [repeated DistData](#distdata) | The input data, the order of inputs must match inputs in ComponentDef. NOTE: Names of DistData doesn't need to match those of inputs in ComponentDef definition. |
 | output_uris | [repeated string](#string) | The output data uris, the order of output_uris must match outputs in ComponentDef. |
