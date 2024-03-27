@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Open Secretflow \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-10 15:56+0800\n"
+"POT-Creation-Date: 2023-11-23 17:39+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -37,7 +37,7 @@ msgid "[DATA](#DATA)"
 msgstr "[数据](#DATA)"
 
 #: ../../spec.md:11 ../../spec.md:29 ../../spec.md:51 ../../spec.md:63
-#: ../../spec.md:87 ../../spec.md:243 ../../spec.md:442 ../../spec.md:490
+#: ../../spec.md:87 ../../spec.md:243 ../../spec.md:444 ../../spec.md:492
 msgid "Messages"
 msgstr ""
 
@@ -109,8 +109,8 @@ msgstr ""
 msgid "[IoDef.TableAttrDef](#iodeftableattrdef)"
 msgstr ""
 
-#: ../../spec.md:41 ../../spec.md:232 ../../spec.md:409 ../../spec.md:479
-#: ../../spec.md:624
+#: ../../spec.md:41 ../../spec.md:232 ../../spec.md:410 ../../spec.md:481
+#: ../../spec.md:626
 msgid "Enums"
 msgstr ""
 
@@ -742,11 +742,20 @@ msgstr ""
 msgid "[ AttributeDef.UnionAttrGroupDesc](#attributedefunionattrgroupdesc)"
 msgstr ""
 
-#: ../../spec.md:284
+#: ../../spec.md
+msgid "custom_protobuf_cls"
+msgstr ""
+
+#: ../../spec.md
+#, fuzzy
+msgid "Extras for custom protobuf attribute"
+msgstr "Union 属性组额外配置。"
+
+#: ../../spec.md:285
 msgid "AttributeDef.AtomicAttrDesc"
 msgstr ""
 
-#: ../../spec.md:285
+#: ../../spec.md:286
 msgid ""
 "Extras for an atomic attribute. Including: `AT_FLOAT | AT_INT | AT_STRING"
 " | AT_BOOL | AT_FLOATS | AT_INTS | AT_STRINGS | AT_BOOLS`."
@@ -845,11 +854,11 @@ msgstr ""
 msgid "upper_bound_inclusive"
 msgstr ""
 
-#: ../../spec.md:308
+#: ../../spec.md:309
 msgid "AttributeDef.UnionAttrGroupDesc"
 msgstr ""
 
-#: ../../spec.md:309
+#: ../../spec.md:310
 msgid "Extras for a union attribute group."
 msgstr "Union 属性组额外配置。"
 
@@ -861,11 +870,11 @@ msgstr ""
 msgid "The default selected child."
 msgstr "默认选择的子节点。"
 
-#: ../../spec.md:320
+#: ../../spec.md:321
 msgid "CompListDef"
 msgstr ""
 
-#: ../../spec.md:321
+#: ../../spec.md:322
 msgid "A list of components"
 msgstr "组件列表"
 
@@ -881,11 +890,11 @@ msgstr ""
 msgid "[repeated ComponentDef](#componentdef)"
 msgstr ""
 
-#: ../../spec.md:335
+#: ../../spec.md:336
 msgid "ComponentDef"
 msgstr ""
 
-#: ../../spec.md:336
+#: ../../spec.md:337
 msgid "The definition of a comp."
 msgstr "组件定义。"
 
@@ -925,11 +934,11 @@ msgstr ""
 msgid "outputs"
 msgstr ""
 
-#: ../../spec.md:353
+#: ../../spec.md:354
 msgid "IoDef"
 msgstr ""
 
-#: ../../spec.md:354
+#: ../../spec.md:355
 msgid "Define an input/output for component."
 msgstr "定义了组件的输入输出。"
 
@@ -957,29 +966,29 @@ msgstr ""
 "仅适用于表。一个 TableAttrDef 的属性路径为 `{input|output}/{IoDef name}/{TableAttrDef "
 "name}` 。"
 
-#: ../../spec.md:368
+#: ../../spec.md:369
 msgid "IoDef.TableAttrDef"
 msgstr ""
 
-#: ../../spec.md:369
+#: ../../spec.md:370
 msgid "An extra attribute for a table."
 msgstr "一个表单的额外属性。"
 
-#: ../../spec.md:371
+#: ../../spec.md:372
 msgid "If provided in a IoDef, e.g."
 msgstr "如果在一个 IoDef 中提供， 例如"
 
-#: ../../spec.md:389
+#: ../../spec.md:390
 msgid ""
 "means after a user provide a table as IO, they should also specify cols "
 "as \"feature\":"
 msgstr "以为着一个用户提供了一个表作为 IO, 他仍然需要制定一些列作为 \"feature\": "
 
-#: ../../spec.md:391
+#: ../../spec.md:392
 msgid "col_min_cnt_inclusive is 1: At least 1 col to be selected."
 msgstr "col_min_cnt_inclusive 为1: 至少选择一列。"
 
-#: ../../spec.md:392
+#: ../../spec.md:393
 msgid ""
 "col_max_cnt_inclusive is 3: At most 3 cols to be selected. And "
 "afterwards, user have to fill an int attribute called bucket_size for "
@@ -1016,11 +1025,11 @@ msgstr ""
 msgid "extra attribute for specified col."
 msgstr "制定列的额外属性。"
 
-#: ../../spec.md:413
+#: ../../spec.md:414
 msgid "AttrType"
 msgstr ""
 
-#: ../../spec.md:414
+#: ../../spec.md:415
 msgid "Supported attribute types."
 msgstr "支持的属性类型。"
 
@@ -1132,31 +1141,39 @@ msgstr ""
 msgid "11"
 msgstr ""
 
-#: ../../spec.md:435
+#: ../../spec.md
+msgid "AT_CUSTOM_PROTOBUF"
+msgstr ""
+
+#: ../../spec.md
+msgid "12"
+msgstr ""
+
+#: ../../spec.md:437
 msgid "EVALUATION"
 msgstr "组件执行"
 
-#: ../../spec.md:437
+#: ../../spec.md:439
 msgid ""
 "Proto file: "
 "[secretflow/spec/v1/evaluation.proto](https://github.com/secretflow/spec/tree/main/secretflow/spec/v1/evaluation.proto)"
 msgstr ""
 
-#: ../../spec.md:446
+#: ../../spec.md:448
 msgid "NodeEvalParam"
 msgstr ""
 
-#: ../../spec.md:447
+#: ../../spec.md:449
 msgid "Evaluate a node."
 msgstr ""
 
-#: ../../spec.md:448
+#: ../../spec.md:450
 msgid ""
 "CompListDef + StorageConfig + NodeEvalParam + other extra configs -> "
 "NodeEvalResult"
 msgstr "CompListDef + StorageConfig + NodeEvalParam + 其他额外配置 -> NodeEvalResult"
 
-#: ../../spec.md:451
+#: ../../spec.md:453
 msgid "NodeEvalParam contains all the information to evaluate a component."
 msgstr "NodeEvalParam 包含了所有用于执行组件的信息。"
 
@@ -1177,8 +1194,12 @@ msgid "attr_paths"
 msgstr ""
 
 #: ../../spec.md
-msgid "The path of attributes. The attribute path for a TableAttrDef is `(input"
-msgstr "属性路径。 一个TableAttrDef的属性路径为 `(input"
+msgid ""
+"The path of attributes. The attribute path for a TableAttrDef is "
+"`(input|output)/(IoDef name)/(TableAttrDef name)(/(column name)(/(extra "
+"attributes))?)?`."
+msgstr ""
+"属性路径。 一个TableAttrDef的属性路径为 `{input|output}/{IoDef name}/{TableAttrDef name}` 。"
 
 #: ../../spec.md
 msgid "[repeated Attribute](#attribute)"
@@ -1209,11 +1230,11 @@ msgid ""
 "ComponentDef."
 msgstr "输出数据，输出的顺序和组件定义中输出顺序一致。"
 
-#: ../../spec.md:468
+#: ../../spec.md:470
 msgid "NodeEvalResult"
 msgstr ""
 
-#: ../../spec.md:469
+#: ../../spec.md:471
 msgid "NodeEvalResult contains outputs of a component evaluation."
 msgstr "NodeEvalResult包含了组件执行之后的输出。"
 
@@ -1221,21 +1242,21 @@ msgstr "NodeEvalResult包含了组件执行之后的输出。"
 msgid "Output data."
 msgstr "输出数据。"
 
-#: ../../spec.md:483
+#: ../../spec.md:485
 msgid "REPORT"
 msgstr "报告"
 
-#: ../../spec.md:485
+#: ../../spec.md:487
 msgid ""
 "Proto file: "
 "[secretflow/spec/v1/report.proto](https://github.com/secretflow/spec/tree/main/secretflow/spec/v1/report.proto)"
 msgstr ""
 
-#: ../../spec.md:494
+#: ../../spec.md:496
 msgid "Descriptions"
 msgstr ""
 
-#: ../../spec.md:495
+#: ../../spec.md:497
 msgid "Displays multiple read-only fields in groups."
 msgstr "以组的形式显示多个值。"
 
@@ -1251,7 +1272,7 @@ msgstr ""
 msgid "[repeated Descriptions.Item](#descriptionsitem)"
 msgstr ""
 
-#: ../../spec.md:508
+#: ../../spec.md:510
 msgid "Descriptions.Item"
 msgstr ""
 
@@ -1267,11 +1288,11 @@ msgstr "必须是 bool/int/float/str 。"
 msgid "value"
 msgstr ""
 
-#: ../../spec.md:523
+#: ../../spec.md:525
 msgid "Div"
 msgstr ""
 
-#: ../../spec.md:524
+#: ../../spec.md:526
 msgid "A division or a section of a page."
 msgstr "一个页面的一部分。"
 
@@ -1287,7 +1308,7 @@ msgstr ""
 msgid "[repeated Div.Child](#divchild)"
 msgstr ""
 
-#: ../../spec.md:537
+#: ../../spec.md:539
 msgid "Div.Child"
 msgstr ""
 
@@ -1319,7 +1340,7 @@ msgstr ""
 msgid "[ Div](#div)"
 msgstr ""
 
-#: ../../spec.md:552
+#: ../../spec.md:554
 msgid "Report"
 msgstr ""
 
@@ -1351,11 +1372,11 @@ msgstr ""
 msgid "Structed error detail (JSON encoded message)."
 msgstr "结构话的报错细节, 推荐使用JSON编码。"
 
-#: ../../spec.md:568
+#: ../../spec.md:570
 msgid "Tab"
 msgstr ""
 
-#: ../../spec.md:569
+#: ../../spec.md:571
 msgid "A page of a report."
 msgstr "一页report。"
 
@@ -1371,11 +1392,11 @@ msgstr ""
 msgid "[repeated Div](#div)"
 msgstr ""
 
-#: ../../spec.md:582
+#: ../../spec.md:584
 msgid "Table"
 msgstr ""
 
-#: ../../spec.md:583
+#: ../../spec.md:585
 msgid "Displays rows of data."
 msgstr "显示一行数据。"
 
@@ -1399,15 +1420,15 @@ msgstr ""
 msgid "[repeated Table.Row](#tablerow)"
 msgstr ""
 
-#: ../../spec.md:597
+#: ../../spec.md:599
 msgid "Table.HeaderItem"
 msgstr ""
 
-#: ../../spec.md:611
+#: ../../spec.md:613
 msgid "Table.Row"
 msgstr ""
 
-#: ../../spec.md:628
+#: ../../spec.md:630
 msgid "Scalar Value Types"
 msgstr "标量值类型"
 
@@ -1574,3 +1595,8 @@ msgstr "可以包含任意字节序列。"
 #: ../../spec.md
 msgid "ByteString"
 msgstr ""
+
+#~ msgid ""
+#~ "The path of attributes. The attribute"
+#~ " path for a TableAttrDef is `(input"
+#~ msgstr "属性路径。 一个TableAttrDef的属性路径为 `(input"
