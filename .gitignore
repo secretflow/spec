@@ -8,3 +8,14 @@ bazel-*
 
 # macos
 .DS_Store
+
+.pytest_cache/
+.coverage
+coverage.xml
+results.xml
+dist
+
+# build
+build/
+secretflow_spec.egg-info/
+secretflow_spec/protos/protoc-26.1/

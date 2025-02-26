@@ -14,14 +14,14 @@
 
 syntax = "proto3";
 
-package secretflow.spec.v1;
+package secretflow_spec.v1;
 
 option java_outer_classname = "EvaluationProto";
-option java_package = "com.secretflow.spec.v1";
+option java_package = "com.secretflow_spec.v1";
 option java_multiple_files = true;
 
-import "secretflow/spec/v1/component.proto";
-import "secretflow/spec/v1/data.proto";
+import "secretflow_spec/v1/component.proto";
+import "secretflow_spec/v1/data.proto";
 
 // Evaluate a node.
 // - CompListDef + StorageConfig + NodeEvalParam + other extra configs ->
@@ -29,33 +29,30 @@ import "secretflow/spec/v1/data.proto";
 //
 // NodeEvalParam contains all the information to evaluate a component.
 message NodeEvalParam {
-  // Domain of the component.
-  string domain = 1;
-
-  // Name of the component.
-  string name = 2;
-
-  // Version of the component.
-  string version = 3;
+  // The version of spec
+  string version = 1;
+  
+  // The unique component id, the format is {domain}/{name}:{version} which is defined in ComponentDef
+  string comp_id = 2;
 
   // The path of attributes.
   // The attribute path for a TableAttrDef is
   // `(input\|output)/(IoDef name)/(TableAttrDef name)(/(column name)(/(extra
   // attributes))?)?`.
-  repeated string attr_paths = 4;
+  repeated string attr_paths = 3;
 
   // The value of the attribute.
   // Must match attr_paths.
-  repeated Attribute attrs = 5;
+  repeated Attribute attrs = 4;
 
   // The input data, the order of inputs must match inputs in ComponentDef.
   // NOTE: Names of DistData doesn't need to match those of inputs in
   // ComponentDef definition.
-  repeated DistData inputs = 6;
+  repeated DistData inputs = 5;
 
   // The output data uris, the order of output_uris must match outputs in
   // ComponentDef.
-  repeated string output_uris = 7;
+  repeated string output_uris = 6;
 
   // If not empty:
   // 1. Component will try to save checkpoint during training if the component
@@ -64,11 +61,13 @@ message NodeEvalParam {
   // previous training. If the checkpoint does not exist or cannot be loaded,
   // training will be starting from scratch.
   //
-  string checkpoint_uri = 8;
+  string checkpoint_uri = 7;
 }
 
 // NodeEvalResult contains outputs of a component evaluation.
 message NodeEvalResult {
+  // The version of spec
+  string version = 1;
   // Output data.
-  repeated DistData outputs = 1;
+  repeated DistData outputs = 2;
 }

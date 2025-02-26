@@ -15,10 +15,10 @@
 
 syntax = "proto3";
 
-package secretflow.spec.v1;
+package secretflow_spec.v1;
 
 option java_outer_classname = "ComponentProto";
-option java_package = "com.secretflow.spec.v1";
+option java_package = "com.secretflow_spec.v1";
 option java_multiple_files = true;
 
 // The value of an attribute
@@ -44,6 +44,15 @@ message Attribute {
 }
 
 // Describe an attribute.
+// There are three kinds of attribute.
+// - Atomic Attributes: a solid field for users to fill-in.
+// - Struct Attributes: a group of closely related attributes(including atomic,
+// union and struct attributes).
+// - Union Attributes: a group of mutually exlusive attributes(including union,
+// group and dummy atomic attributes). Users should select only one children to
+// fill-in. An atmoic attribute with ATTR_TYPE_UNSPECIFIED AttrType is regarded
+// as dummy, which represents a selection of union without further
+// configurations.
 message AttributeDef {
   // Indicates the ancestors of a node,
   // e.g. `[name_a, name_b, name_c]` means the path prefixes of current
@@ -109,6 +118,15 @@ message AttributeDef {
 
   // Extras for custom protobuf attribute
   string custom_protobuf_cls = 7;
+
+  // Extras for COL_PARAMS
+  string col_params_binded_table = 8;
+
+  // The attribute can appear in NodeEvalParam only if current minor is in [minor_min, minor_max]
+  // if current minor < minor_min, it's not supported,
+  // if minor_max != -1 and current minor > minor_max, it's a deprecated attribute
+  int32 minor_min = 9;
+  int32 minor_max = 10; 
 }
 
 // Define an input/output for component.
@@ -169,36 +187,48 @@ message IoDef {
   // The attribute path for a TableAttrDef is `{input\|output}/{IoDef
   // name}/{TableAttrDef name}`.
   repeated TableAttrDef attrs = 4;
+
+  bool is_optional = 5;
+
+  // if the input io is variable, it must be the last one and size must be in [variable_min, variable_max]
+  bool is_variable = 6;
+  int32 variable_min = 7;
+  int32 variable_max = 8;
+
+  // The io input/output can appear in NodeEvalParam only if current minor is in [minor_min, minor_max]
+  // if current minor < minor_min, it's not supported,
+  // if minor_max != -1 and current minor > minor_max, it's a deprecated io input/output
+  int32 minor_min = 9;
+  int32 minor_max = 10; 
 }
 
 // The definition of a comp.
 message ComponentDef {
   // Namespace of the comp.
   string domain = 1;
-
   // Should be unique among all comps of the same domain.
   string name = 2;
-
-  string desc = 3;
-
   // Version of the comp.
-  string version = 4;
+  string version = 3;
+  // Description of the comp.
+  string desc = 4;
+  // Static label infomations of the comp.
+  // e.g., {"sf.use.mpc":"true", "sf.multi.party.computation":"true"}
+  map<string,string> labels = 5;
 
-  repeated AttributeDef attrs = 5;
-
-  repeated IoDef inputs = 6;
-
-  repeated IoDef outputs = 7;
+  repeated AttributeDef attrs = 10;
+  repeated IoDef inputs = 11;
+  repeated IoDef outputs = 12;
 }
 
 // A list of components
 message CompListDef {
-  string name = 1;
-
-  string desc = 2;
-
-  string version = 3;
-
+  // The version of spec, format is {major}.{minor}
+  // the different major version are not compatible
+  // the different minor version should be forward compatible, In other words, you can only add fields and cannot modify or delete fields.
+  string version = 1;
+  string name = 2;
+  string desc = 3;
   repeated ComponentDef comps = 4;
 }
 
@@ -228,4 +258,5 @@ enum AttrType {
   AT_UNION_GROUP = 10;
   AT_CUSTOM_PROTOBUF = 11;
   AT_PARTY = 12; // A specialized AT_STRINGS.
+  AT_COL_PARAMS = 13; // A specialized AT_STRINGS.
 }

@@ -1,0 +1,11 @@
+[
+  {
+    "included_paths": ["secretflow_spec/v1/*.proto"],
+    "disabled_rules": [
+      "core::0192::only-leading-comments",
+      "core::0192::has-comments",
+      "core::0146::any",
+      "core::0123::resource-annotation"
+    ]
+  }
+]

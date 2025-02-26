@@ -1600,3 +1600,4 @@ msgstr ""
 #~ "The path of attributes. The attribute"
 #~ " path for a TableAttrDef is `(input"
 #~ msgstr "属性路径。 一个TableAttrDef的属性路径为 `(input"
+

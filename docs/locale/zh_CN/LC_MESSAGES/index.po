@@ -93,3 +93,4 @@ msgid ""
 "We officially launch the first version of Specification with SecretFlow "
 "1.0.0."
 msgstr "我们伴随 SecretFlow 1.0.0 发布了第一个版本。"
+
