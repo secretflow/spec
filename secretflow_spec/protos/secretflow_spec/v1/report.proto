@@ -14,12 +14,12 @@
 
 syntax = "proto3";
 
-package secretflow.spec.v1;
+package secretflow_spec.v1;
 
-import "secretflow/spec/v1/component.proto";
+import "secretflow_spec/v1/component.proto";
 
 option java_outer_classname = "ReportProto";
-option java_package = "com.secretflow.spec.v1";
+option java_package = "com.secretflow_spec.v1";
 option java_multiple_files = true;
 
 // Displays multiple read-only fields in groups.

@@ -14,5 +14,5 @@ After you modified protos, please check with API Linter.
 
 ```bash
 go install github.com/googleapis/api-linter/cmd/api-linter@latest
-sh run_api_linter.sh
+sh secretflow_spec/protos/run_api_linter.sh
 ```
