@@ -10,7 +10,7 @@
 ---
 
 
-## [Data]((spec.md#data))
+## [Data](spec.md#data)
 
 We introduce [DistData](spec.md#distdata) to represent inputs and outputs in privacy-preserving applications.
 

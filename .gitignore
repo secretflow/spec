@@ -19,3 +19,6 @@ dist
 build/
 secretflow_spec.egg-info/
 secretflow_spec/protos/protoc-26.1/
+
+.venv/
+*.mo
