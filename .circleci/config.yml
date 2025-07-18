@@ -52,7 +52,7 @@ workflows:
             tests/.*                      test               true
   publish-workflow:
     when:
-      equal: [ "publish_pypi", << pipeline.parameters.GHA_Meta >> ]
+      equal: ["publish_pypi", << pipeline.parameters.GHA_Meta >>]
     jobs:
       - continuation/continue:
           configuration_path: .circleci/release-config.yml
