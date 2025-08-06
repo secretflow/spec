@@ -96,6 +96,7 @@ jobs:
     parameters:
       resource_class:
         type: string
+        default: medium
     executor:
       name: linux_executor
       resource_class: << parameters.resource_class >>

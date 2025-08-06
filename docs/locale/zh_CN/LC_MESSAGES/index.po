@@ -4,27 +4,29 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
+
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Open Secretflow \n"
+"Project-Id-Version: Open Secretflow\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-10 15:29+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: zh_CN\n"
+"POT-Creation-Date: 2025-08-06 15:58+0800\n"
+"PO-Revision-Date: 2025-08-06 16:04+0800\n"
+"Last-Translator: \n"
 "Language-Team: zh_CN <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.17.0\n"
+"X-Generator: Poedit 3.6\n"
 
-#: ../../index.rst:23
+#: ../../index.rst:24
 msgid "Specification"
 msgstr "标准文本"
 
-#: ../../index.rst:23
+#: ../../index.rst:24
 msgid "Introduction"
 msgstr "标准介绍"
 
@@ -33,16 +35,11 @@ msgid "Welcome to SecretFlow Open Specification"
 msgstr "欢迎访问隐语开放标准"
 
 #: ../../index.rst:9
-msgid ""
-"SecretFlow Open Specification is a protocol stack designed for privacy-"
-"preserving applications."
+msgid "SecretFlow Open Specification is a protocol stack designed for privacy-preserving applications."
 msgstr "隐语开放标准是为隐私保护应用设计的协议栈。"
 
 #: ../../index.rst:11
-msgid ""
-"At this moment, SecretFlow Open Specification consists of Data, Component"
-" and Node Evaluation protocols. We are going to introduce Workflow "
-"protocol soon."
+msgid "At this moment, SecretFlow Open Specification consists of Data, Component and Node Evaluation protocols. We are going to introduce Workflow protocol soon."
 msgstr "目前，隐语开放标准包括数据、组件和节点评估协议。我们将很快引入工作流程协议。"
 
 #: ../../index.rst:13
@@ -50,47 +47,54 @@ msgid "SecretFlow Open Specification are used by SecretFlow ecosystem, including
 msgstr "隐语开放标准被隐语生态系统使用，包括："
 
 #: ../../index.rst:15
-msgid ""
-"SecretFlow: a unified framework for privacy-preserving data analysis and "
-"machine learning"
-msgstr "SecretFlow：用于隐私保护数据分析和机器学习的统一框架。"
+msgid "SecretFlow: a unified framework for privacy-preserving data analysis and machine learning"
+msgstr "SecretFlow：用于隐私保护数据分析和机器学习的统一框架"
 
 #: ../../index.rst:16
-msgid ""
-"Kuscia: a K8s-based privacy-preserving computing task orchestration "
-"framework."
+msgid "Kuscia: a K8s-based privacy-preserving computing task orchestration framework."
 msgstr "Kuscia：基于 K8s 的隐私保护计算任务编排框架。"
 
 #: ../../index.rst:17
-msgid ""
-"SecretPad: a privacy-preserving computing web platform based on the "
-"Kuscia framework, designed to provide easy access to privacy-preserving "
-"data intelligence and machine learning functions."
+msgid "SecretPad: a privacy-preserving computing web platform based on the Kuscia framework, designed to provide easy access to privacy-preserving data intelligence and machine learning functions."
 msgstr "SecretPad：基于 Kuscia 框架的隐私保护计算 Web 平台，旨在为隐私保护数据智能和机器学习功能提供便捷访问。"
 
 #: ../../index.rst:18
-msgid "SCQL and TEE engine will also use SecretFlow Open Specification in future."
-msgstr "SCQL 和 TEE 引擎将来也将使用隐语开放标准。"
+msgid "SCQL: Secure Collaborative Query Language (SCQL) is a system that translates SQL statements into a hybrid MPC-plaintext execution graph and executes them on a federation of database systems."
+msgstr "SCQL：联合数据分析，实现将 SQL 语句转换为明密文混合执行图，并在联合数据库系统上执行。"
 
-#: ../../index.rst:32
+#: ../../index.rst:19
+msgid "TrustFlow: A zero-trust computing system based on TEE(Trusted Execution Environments)."
+msgstr "TrustFlow：基于可信硬件的隐私保护引擎。"
+
+#: ../../index.rst:33
 msgid "Announcement"
 msgstr "公告"
 
-#: ../../index.rst:35
+#: ../../index.rst:36
 msgid "Oct, 2023"
 msgstr "2023 年 10 月"
 
-#: ../../index.rst:37
+#: ../../index.rst:38
 msgid "SecretFlow Open Specification v1.0 is launched."
 msgstr "已发布隐语开放标准 v1.0。"
 
-#: ../../index.rst:40
+#: ../../index.rst:41
 msgid "July, 2023"
 msgstr "2023 年 7 月"
 
-#: ../../index.rst:42
-msgid ""
-"We officially launch the first version of Specification with SecretFlow "
-"1.0.0."
+#: ../../index.rst:43
+msgid "We officially launch the first version of Specification with SecretFlow 1.0.0."
 msgstr "我们伴随 SecretFlow 1.0.0 发布了第一个版本。"
 
+#~ msgid ""
+#~ "SecretPad: a privacy-preserving computing "
+#~ "web platform based on the Kuscia "
+#~ "framework, designed to provide easy "
+#~ "access to privacy-preserving data "
+#~ "intelligence and machine learning functions."
+#~ msgstr "SecretPad：基于 Kuscia 框架的隐私保护计算 Web 平台，旨在为隐私保护数据智能和机器学习功能提供便捷访问。"
+
+#~ msgid ""
+#~ "SCQL and TEE engine will also use"
+#~ " SecretFlow Open Specification in future."
+#~ msgstr "SCQL 和 TEE 引擎将来也将使用隐语开放标准。"

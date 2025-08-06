@@ -15,7 +15,8 @@ SecretFlow Open Specification are used by SecretFlow ecosystem, including:
 - SecretFlow: a unified framework for privacy-preserving data analysis and machine learning
 - Kuscia: a K8s-based privacy-preserving computing task orchestration framework.
 - SecretPad: a privacy-preserving computing web platform based on the Kuscia framework, designed to provide easy access to privacy-preserving data intelligence and machine learning functions.
-- SCQL and TEE engine will also use SecretFlow Open Specification in future.
+- SCQL: Secure Collaborative Query Language (SCQL) is a system that translates SQL statements into a hybrid MPC-plaintext execution graph and executes them on a federation of database systems. 
+- TrustFlow: A zero-trust computing system based on TEE(Trusted Execution Environments). 
 
 .. image:: _static/ecosystem.svg
    :width: 800
