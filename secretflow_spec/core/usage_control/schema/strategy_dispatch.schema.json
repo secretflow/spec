@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secretflow.org.cn/schemas/tc609/strategy-dispatch.schema.json",
+  "title": "Platform strategy-dispatch payload (Usage Control 9.2.1 strategySend)",
+  "description": "Request body of the 'platform strategy dispatch' interface defined in the technical document 'Trusted Data Space - Usage Control - Technical Requirements', Table 2 / Section 9.2.1. Field lengths are normative values from the interface table.",
+  "type": "object",
+  "required": ["contractId", "strategyId", "strategyVersion", "transactionExecutionStrategy", "issuedAt", "signature"],
+  "properties": {
+    "contractId": {
+      "type": "string",
+      "minLength": 47,
+      "maxLength": 47,
+      "description": "Digital contract unique identifier (47-char composite)."
+    },
+    "strategyId": {
+      "type": "string",
+      "minLength": 36,
+      "maxLength": 36,
+      "description": "Strategy instance unique identifier (Table 2 #2)."
+    },
+    "strategyVersion": {
+      "type": "string",
+      "minLength": 36,
+      "maxLength": 36,
+      "description": "Version of the dispatched strategy (Table 2 #3)."
+    },
+    "transactionExecutionStrategy": {
+      "type": "object",
+      "description": "Digital contract strategy payload; example format per 'Digital Contract - Technical Requirements' (Table 2 #4)."
+    },
+    "expansionItem": { "type": "object", "description": "Optional extension (Table 2 #5)." },
+    "issuedAt": {
+      "type": "string",
+      "description": "ISO-8601 timestamp (Table 2 #6).",
+      "format": "date-time"
+    },
+    "signature": { "type": "string", "description": "Platform digital signature (Table 2 #7)." }
+  }
+}

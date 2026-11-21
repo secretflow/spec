@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://secretflow.org.cn/schemas/tc609/digital-contract.schema.json",
+  "title": "Trusted Data Space Digital Contract (TC609-6-2025-01 aligned)",
+  "description": "Machine-readable translation of the structure defined in the technical document 'Trusted Data Space - Digital Contract - Technical Requirements' (draft for comments), Sections 6.1-6.2.2.4. Contract info per Table 1; policy composition per 6.2.2; operation behaviours per Table 4; constraint names per Table 6.1; operators per Table 7.2.",
+  "type": "object",
+  "required": ["contractInfo", "contractPolicies"],
+  "properties": {
+    "contractInfo": {
+      "type": "object",
+      "description": "Table 1 contract information (13 items).",
+      "required": ["contractId", "contractName", "subjectIds", "signatures"],
+      "properties": {
+        "contractId": {
+          "type": "string",
+          "description": "47-char composite identifier: 1 type code + 1 node type code + 18 subject code + 4 region/industry code + 14 time code (YYYYMMDDHHMMSS) + 8 random code + 1 check code. Usage Control Table 2 #1.",
+          "pattern": "^[0-9]{24}[0-9]{14}[A-Za-z0-9]{8}[0-9]$",
+          "minLength": 47,
+          "maxLength": 47
+        },
+        "contractName": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["initiated", "negotiating", "signed", "sign_failed", "performing", "terminated"],
+          "description": "Contract lifecycle states per Table 1 #4."
+        },
+        "createdAt": { "type": "string" },
+        "signingMode": {
+          "type": "string",
+          "description": "Table 1 #6: p2p (point-to-point), platform-mediated, or multi-party consensus.",
+          "enum": ["p2p", "platform_mediated", "multi_party"]
+        },
+        "subjectIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Signing subject identifiers per NDI-TR-2025-04 (Table 1 #7)."
+        },
+        "subjectNames": { "type": "array", "items": { "type": "string" } },
+        "subjectTypes": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["provider", "consumer", "service"] },
+          "description": "Table 1 #9: data provider / consumer / service party."
+        },
+        "signedAt": { "type": "string" },
+        "signatures": {
+          "type": "object",
+          "minProperties": 1,
+          "description": "subject id -> digital signature over (contractId, signedAt) per Table 1 #11.",
+          "additionalProperties": { "type": "string" }
+        },
+        "validUntil": { "type": "string" },
+        "expansionItem": { "type": "object", "description": "Table 1 #13 extension." }
+      }
+    },
+    "contractPolicies": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/contractPolicy" }
+    }
+  },
+  "$defs": {
+    "constraintName": {
+      "type": "string",
+      "description": "Digital Contract Table 6.1 (17 canonical names); unknown business constraints must use 'extend' (Table 6.1 #17, extensibility clause 5.2 f).",
+      "enum": [
+        "time", "timeWindow", "networkAddress", "physicalAddress", "securityLevel",
+        "count", "dataSize", "dataRecordNumber", "dataField", "dataFieldValue",
+        "function", "executionEnv", "encryptMode", "deliveryMethod",
+        "deliveryChannel", "payAmount", "extend"
+      ]
+    },
+    "operator": {
+      "type": "string",
+      "description": "Digital Contract Table 7.2 (12 operators).",
+      "enum": [
+        "eq", "gt", "gteq", "hasPart", "isA", "isAllOf",
+        "isAnyOf", "isNoneOf", "isPartOf", "lt", "lteq", "neq"
+      ]
+    },
+    "constraint": {
+      "type": "object",
+      "description": "Table 5: constraint = name + operator + value.",
+      "required": ["name", "operator", "value"],
+      "properties": {
+        "name": { "$ref": "#/$defs/constraintName" },
+        "operator": { "$ref": "#/$defs/operator" },
+        "value": {}
+      }
+    },
+    "operationAction": {
+      "type": "string",
+      "description": "Digital Contract Table 4 (25 operations incl. 'extend' for customised behaviour).",
+      "enum": [
+        "convert", "anonymize", "mask", "blur", "access", "read", "copy", "store",
+        "download", "process", "jointDevelop", "cache", "burnAfterUse", "distribute",
+        "export", "authorizeUse", "deliver", "sell", "acceptTracking", "log",
+        "delete", "inform", "alert", "compensate", "extend"
+      ]
+    },
+    "operation": {
+      "type": "object",
+      "required": ["action"],
+      "properties": {
+        "action": { "$ref": "#/$defs/operationAction" },
+        "constraints": { "type": "array", "items": { "$ref": "#/$defs/constraint" } }
+      }
+    },
+    "contractObject": {
+      "type": "object",
+      "description": "Table 2 contract object (data product).",
+      "required": ["productId", "productName"],
+      "properties": {
+        "productId": { "type": "string", "minLength": 1, "description": "Unique product identifier from registration (Table 2 #1)." },
+        "productName": { "type": "string" },
+        "description": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "expansionItem": { "type": "object" }
+      }
+    },
+    "policyExecutePoint": {
+      "type": "object",
+      "description": "Table 3: connectors or business nodes designated as policy execute points (6.2.2.2).",
+      "required": ["providerPepId"],
+      "properties": {
+        "providerPepId": { "type": "string" },
+        "providerPepName": { "type": "string" },
+        "consumerPepId": { "type": "string" },
+        "consumerPepName": { "type": "string" },
+        "expansionItem": { "type": "object" }
+      }
+    },
+    "contractPolicy": {
+      "type": "object",
+      "description": "6.2.2: policy = objects + execute points + operations + constraints. Types: allow (prior-obligation extension), forbid (remedial-measure extension), obligation (liability extension).",
+      "required": ["policyType", "strategyId", "objects", "operations"],
+      "properties": {
+        "policyType": { "type": "string", "enum": ["allow", "forbid", "obligation"] },
+        "strategyId": {
+          "type": "string",
+          "minLength": 36,
+          "maxLength": 36,
+          "description": "Strategy instance unique identifier (Usage Control Table 2 #2, 36 chars)."
+        },
+        "strategyVersion": { "type": "string", "description": "Usage Control Table 2 #3." },
+        "objects": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/contractObject" } },
+        "executePoints": { "type": "array", "items": { "$ref": "#/$defs/policyExecutePoint" } },
+        "operations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/operation" } },
+        "subjects": { "type": "array", "items": { "type": "string" } },
+        "priorObligations": {
+          "type": "array",
+          "description": "ALLOW extension (6.2.2). Each item: {action, order} where order enforces strict sequence per Usage Control 7.1.2.4 e).",
+          "items": {
+            "type": "object",
+            "required": ["action", "order"],
+            "properties": {
+              "action": { "type": "string" },
+              "order": { "type": "integer", "minimum": 1 }
+            }
+          }
+        },
+        "remedialMeasures": {
+          "type": "array",
+          "description": "FORBID extension (6.2.2): measures executed when forbidden behaviour occurs.",
+          "items": { "type": "object", "required": ["action"], "properties": { "action": { "type": "string" } } }
+        },
+        "liability": {
+          "type": "object",
+          "description": "OBLIGATION extension (6.2.2): liability triggered on breach.",
+          "properties": {
+            "breachAction": { "type": "string" },
+            "compensation": { "type": "string" }
+          }
+        },
+        "expansionItem": { "type": "object" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "policyType": { "const": "forbid" } } },
+          "then": { "required": ["remedialMeasures"] }
+        },
+        {
+          "if": { "properties": { "policyType": { "const": "obligation" } } },
+          "then": { "required": ["liability"] }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "description": "Appendix D scenario 5: encrypted computation task in confidential-computing cluster (process; encryptMode eq ciphertext-use; timeWindow range; dataField isA field list; count lteq 1000; executionEnv isA confidential-computing).",
+  "contractInfo": {
+    "contractId": "10110000000000000001310020250605130000F189B3455",
+    "contractName": "密态加工任务合约",
+    "status": "signed",
+    "subjectIds": ["P-1001", "C-2004"],
+    "subjectTypes": ["provider", "consumer"],
+    "signedAt": "2025-06-05T13:00:00+08:00",
+    "signatures": { "P-1001": "sigP", "C-2004": "sigC" },
+    "validUntil": "2025-03-20T23:59:59+08:00"
+  },
+  "contractPolicies": [
+    {
+      "policyType": "allow",
+      "strategyId": "4d5e6f70-8192-a3b4-c5d6-e7f809123456",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-TELECOM-005", "productName": "运营商详单密态加工产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0004" }
+      ],
+      "operations": [
+        {
+          "action": "process",
+          "constraints": [
+            { "name": "encryptMode", "operator": "eq", "value": "ciphertext-use" },
+            { "name": "timeWindow", "operator": "isA", "value": ["2024-03-20T23:59:59+08:00", "2025-03-20T23:59:59+08:00"] },
+            { "name": "dataField", "operator": "isA", "value": ["msisdn_hash", "province", "traffic_mb"] },
+            { "name": "count", "operator": "lteq", "value": 1000 },
+            { "name": "executionEnv", "operator": "isA", "value": "confidential-computing" }
+          ]
+        }
+      ],
+      "priorObligations": [
+        { "action": "burnAfterUse", "order": 3 },
+        { "action": "log", "order": 1 },
+        { "action": "inform", "order": 2 }
+      ]
+    }
+  ]
+}

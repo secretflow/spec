@@ -1,0 +1,45 @@
+{
+  "description": "Appendix D scenario 1 of 'Digital Contract - Technical Requirements': data product API access with rate and volume limits (read; count lteq 10000/day; timeInterval eq P1D; networkAddress isA specific IP range).",
+  "contractInfo": {
+    "contractId": "10110000000000000001310020250601120000AB12CD347",
+    "contractName": "公共数据 API 调用合约",
+    "status": "signed",
+    "signingMode": "platform_mediated",
+    "subjectIds": ["P-1001", "C-2001"],
+    "subjectNames": ["某公共数据平台", "某企业数据使用方"],
+    "subjectTypes": ["provider", "consumer"],
+    "signedAt": "2025-06-01T12:00:00+08:00",
+    "signatures": {
+      "P-1001": "MEUCIQD+exampleProviderSignature",
+      "C-2001": "MEUCIQD+exampleConsumerSignature"
+    },
+    "validUntil": "2026-06-01T12:00:00+08:00"
+  },
+  "contractPolicies": [
+    {
+      "policyType": "allow",
+      "strategyId": "0f1e2d3c-4b5a-6978-8796-a5b4c3d2e1f0",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-CITY-OPEN-001", "productName": "城市公共数据产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0001" }
+      ],
+      "operations": [
+        {
+          "action": "read",
+          "constraints": [
+            { "name": "count", "operator": "lteq", "value": 10000 },
+            { "name": "extend", "operator": "eq", "value": "P1D", "ref": "appendixD:timeInterval" },
+            { "name": "networkAddress", "operator": "isA", "value": "203.0.113.0/24" }
+          ]
+        }
+      ],
+      "priorObligations": [
+        { "action": "log", "order": 1 },
+        { "action": "inform", "order": 2 }
+      ]
+    }
+  ]
+}

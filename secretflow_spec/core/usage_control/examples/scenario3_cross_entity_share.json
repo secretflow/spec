@@ -1,0 +1,55 @@
+{
+  "description": "Appendix D scenario 3: cross-entity data sharing with secure delivery channel (distribute; deliveryChannel eq secure-channel; notification to consumer).",
+  "contractInfo": {
+    "contractId": "10110000000000000001310020250603110000DE56F1238",
+    "contractName": "跨主体数据共享合约",
+    "status": "signed",
+    "subjectIds": ["P-1001", "C-2002"],
+    "subjectTypes": ["provider", "consumer"],
+    "signedAt": "2025-06-03T11:00:00+08:00",
+    "signatures": { "P-1001": "sigP", "C-2002": "sigC" },
+    "validUntil": "2026-06-03T11:00:00+08:00"
+  },
+  "contractPolicies": [
+    {
+      "policyType": "allow",
+      "strategyId": "2b3c4d5e-6f70-8192-a3b4-c5d6e7f80912",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-HEALTH-003", "productName": "脱敏健康统计数据产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0002" }
+      ],
+      "operations": [
+        {
+          "action": "distribute",
+          "constraints": [
+            { "name": "deliveryChannel", "operator": "eq", "value": "secure-channel" }
+          ]
+        }
+      ],
+      "priorObligations": [
+        { "action": "inform", "order": 1, "target": "consumer" }
+      ]
+    },
+    {
+      "policyType": "forbid",
+      "strategyId": "2b3c4d5e-6f70-8192-a3b4-c5d6e7f80913",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-HEALTH-003", "productName": "脱敏健康统计数据产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0002" }
+      ],
+      "operations": [
+        { "action": "copy", "constraints": [] }
+      ],
+      "remedialMeasures": [
+        { "action": "alert" },
+        { "action": "delete" }
+      ]
+    }
+  ]
+}
