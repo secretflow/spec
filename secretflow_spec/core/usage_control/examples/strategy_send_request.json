@@ -1,0 +1,11 @@
+{
+  "description": "Request body example of the platform strategy-dispatch interface '/strategySend' (Usage Control 9.2.1 Table 2). Field composition follows the normative table: contractId 47 chars, strategyId/strategyVersion 36 chars, ISO-8601 issuedAt, platform signature.",
+  "contractId": "10110000000000000001310020250601120000AB12CD347",
+  "strategyId": "0f1e2d3c-4b5a-6978-8796-a5b4c3d2e1f0",
+  "strategyVersion": "11112222-3333-4444-5555-666677778889",
+  "transactionExecutionStrategy": {
+    "note": "payload per 'Digital Contract - Technical Requirements' contract strategy structure; see digital_contract.schema.json"
+  },
+  "issuedAt": "2025-06-01T12:05:00+08:00",
+  "signature": "MEUCIQD+platformSignatureExample"
+}

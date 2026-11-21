@@ -1,0 +1,56 @@
+{
+  "description": "Appendix D scenario 4: data product purchase (sell; payAmount eq 100.00 CNY; timeWindow lteq P365D; liability extension with compensation).",
+  "contractInfo": {
+    "contractId": "10110000000000000001310020250604120000EF78A2349",
+    "contractName": "数据产品购买合约",
+    "status": "signed",
+    "subjectIds": ["P-1001", "C-2003"],
+    "subjectTypes": ["provider", "consumer"],
+    "signedAt": "2025-06-04T12:00:00+08:00",
+    "signatures": { "P-1001": "sigP", "C-2003": "sigC" },
+    "validUntil": "2026-06-04T12:00:00+08:00"
+  },
+  "contractPolicies": [
+    {
+      "policyType": "allow",
+      "strategyId": "3c4d5e6f-7081-92a3-b4c5-d6e7f8091234",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-RISK-004", "productName": "风控评分数据产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0003" }
+      ],
+      "operations": [
+        {
+          "action": "sell",
+          "constraints": [
+            { "name": "payAmount", "operator": "eq", "value": "100.00 CNY" },
+            { "name": "timeWindow", "operator": "lteq", "value": "P365D" }
+          ]
+        }
+      ],
+      "priorObligations": [
+        { "action": "log", "order": 1 }
+      ]
+    },
+    {
+      "policyType": "obligation",
+      "strategyId": "3c4d5e6f-7081-92a3-b4c5-d6e7f8091235",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-RISK-004", "productName": "风控评分数据产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0003" }
+      ],
+      "operations": [
+        { "action": "acceptTracking", "constraints": [] }
+      ],
+      "liability": {
+        "breachAction": "refuse-tracking",
+        "compensation": "liquidated-damages"
+      }
+    }
+  ]
+}

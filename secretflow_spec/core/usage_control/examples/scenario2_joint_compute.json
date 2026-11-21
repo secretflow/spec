@@ -1,0 +1,43 @@
+{
+  "description": "Appendix D scenario 2 of 'Digital Contract - Technical Requirements': multi-party joint computation, data stays in domain (jointDevelop; executionEnv isA sandbox; result notification).",
+  "contractInfo": {
+    "contractId": "10110000000000000001310020250602100000CD34EF127",
+    "contractName": "多方联合计算合约",
+    "status": "signed",
+    "signingMode": "multi_party",
+    "subjectIds": ["P-1001", "P-1002", "C-2001"],
+    "subjectTypes": ["provider", "provider", "consumer"],
+    "signedAt": "2025-06-02T10:00:00+08:00",
+    "signatures": {
+      "P-1001": "MEUCIQD+sigP1",
+      "P-1002": "MEUCIQD+sigP2",
+      "C-2001": "MEUCIQD+sigC1"
+    },
+    "validUntil": "2025-12-31T23:59:59+08:00"
+  },
+  "contractPolicies": [
+    {
+      "policyType": "allow",
+      "strategyId": "1a2b3c4d-5e6f-7081-92a3-b4c5d6e7f809",
+      "strategyVersion": "v1",
+      "objects": [
+        { "productId": "DP-FIN-CREDIT-002", "productName": "信贷特征数据产品", "ownerId": "P-1001" }
+      ],
+      "executePoints": [
+        { "providerPepId": "CONN-PROV-0001", "consumerPepId": "CONN-CONS-0001" }
+      ],
+      "operations": [
+        {
+          "action": "jointDevelop",
+          "constraints": [
+            { "name": "extend", "operator": "eq", "value": "joint-modeling", "ref": "appendixD:purpose" },
+            { "name": "executionEnv", "operator": "isA", "value": "data-sandbox" }
+          ]
+        }
+      ],
+      "priorObligations": [
+        { "action": "inform", "order": 1, "target": "computation-result" }
+      ]
+    }
+  ]
+}
